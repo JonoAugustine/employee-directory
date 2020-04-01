@@ -11,6 +11,7 @@ $color-text: hsl(220, 12%, 91%);
 *::after {
   box-sizing: border-box;
   margin: 0;
+  transition: all 0.3s;
 }
 
 html,
@@ -25,4 +26,71 @@ body,
 
 h1 {
   font-size: 2.1rem;
+}
+
+header {
+  text-align: center;
+  padding: 1rem auto;
+}
+
+nav {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0.5rem;
+
+  & > div {
+    margin: 0.5rem;
+  }
+
+  button {
+    outline: none;
+    background-color: $color-primary;
+    padding: 5px;
+    border: 1px solid transparent;
+    margin: 5px;
+    box-shadow: 0.1rem 0.4rem 0.3rem hsla(0, 0, 0, 0.4);
+    color: $color-text;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-5%);
+      transition: all 0.3s;
+    }
+  }
+}
+
+.grid {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  .card {
+    margin: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+    background-color: $color-primary;
+
+    p {
+      margin: 0.4rem auto;
+
+      &::before {
+        font-weight: bold;
+      }
+
+      &.department:before {
+        content: "Department: ";
+      }
+
+      &.salary::before {
+        content: "Salary: ";
+      }
+
+      &.birthday:before {
+        content: "D.o.B.: ";
+      }
+    }
+  }
 }

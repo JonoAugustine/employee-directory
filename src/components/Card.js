@@ -7,9 +7,9 @@ const Card = ({ employee }) => {
         {employee.firstName} {employee.lastName}
       </h3>
       <p>{employee.title}</p>
-      <p>{employee.department}</p>
-      <p>{employee.salary}</p>
-      <p>{employee.birthday}</p>
+      <p className="department">{employee.department}</p>
+      <p className="salary">{employee.salary}</p>
+      <p className="birthday">{employee.birthday}</p>
     </div>
   );
 };

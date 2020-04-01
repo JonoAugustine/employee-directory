@@ -16,58 +16,61 @@ const App = () => {
         <h1>Employee Directory</h1>
       </header>
       <nav>
-        <div className="filters">
+        <div>
           <h3>Filter By Department:</h3>
-          <button onClick={() => setFilter({ filter: () => true })}>All</button>
-          <button
-            onClick={() => {
-              setFilter({ filter: e => e.department === "HR" });
-            }}
-          >
-            HR
-          </button>
-          <button
-            onClick={() => {
-              setFilter({ filter: e => e.department === "Finance" });
-            }}
-          >
-            Finance
-          </button>
-          <button
-            onClick={() => {
-              setFilter({ filter: e => e.department === "C-Suite" });
-            }}
-          >
-            C-Suite
-          </button>
-          <button
-            onClick={() => {
-              setFilter({ filter: e => e.department === "IT" });
-            }}
-          >
-            IT
-          </button>
+          <div>
+            <button onClick={() => setFilter({ filter: () => true })}>All</button>
+            <button
+              onClick={() => {
+                setFilter({ filter: e => e.department === "HR" });
+              }}
+            >
+              HR
+            </button>
+            <button
+              onClick={() => {
+                setFilter({ filter: e => e.department === "Finance" });
+              }}
+            >
+              Finance
+            </button>
+            <button
+              onClick={() => {
+                setFilter({ filter: e => e.department === "C-Suite" });
+              }}
+            >
+              C-Suite
+            </button>
+            <button
+              onClick={() => {
+                setFilter({ filter: e => e.department === "IT" });
+              }}
+            >
+              IT
+            </button>
+          </div>
         </div>
-        <div className="sorters">
+        <div>
           <h3>Sort By:</h3>
-
-          <button
-            onClick={() => {
-              setComparator({ comparator: (e1, e2) => e2.salary - e1.salary });
-            }}
-          >
-            Salary
-          </button>
-          <button
-            onClick={() => {
-              setComparator({
-                comparator: (e1, e2) =>
-                  e1.firstName > e2.firstName ? 1 : e1.firstName < e2.firstName ? -1 : 0
-              });
-            }}
-          >
-            First Name
-          </button>
+          <div>
+            <button
+              onClick={() => {
+                setComparator({ comparator: (e1, e2) => e2.salary - e1.salary });
+              }}
+            >
+              Salary
+            </button>
+            <button
+              onClick={() => {
+                setComparator({
+                  comparator: (e1, e2) =>
+                    e1.firstName > e2.firstName ? 1 : e1.firstName < e2.firstName ? -1 : 0
+                });
+              }}
+            >
+              First Name
+            </button>
+          </div>
         </div>
       </nav>
       <div className="grid">
